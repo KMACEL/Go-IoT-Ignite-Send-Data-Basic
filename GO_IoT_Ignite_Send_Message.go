@@ -12,10 +12,10 @@ func main() {
 	topic := "golang@gopher@mqtt/publish/DeviceProfile/goNode/goSensor"
 	broker := "ssl://mqtt.ardich.com:8883"
 
-	password := "12345678"
-	user := "gophergo"
 	clientId := "golang@gopher@mqtt"
-
+	user := "gophergo"
+	password := "12345678"
+	
 	qos := 1
 
 	payload:= "{data:{sensorData:[{date:"+strconv.FormatInt(time.Now().Unix(), 10)+"000,values:[555]}],formatVersion:2}}"
