@@ -9,12 +9,12 @@ import (
 
 
 func main() {
-	topic := "python@test@mqtt/publish/DeviceProfile/PythonNode1/PySens"
+	topic := "golang@gopher@mqtt/publish/DeviceProfile/goNode/goSensor"
 	broker := "ssl://mqtt.ardich.com:8883"
 
 	password := "12345678"
-	user := "pythontest"
-	clientId := "python@test@mqtt"
+	user := "gophergo"
+	clientId := "golang@gopher@mqtt"
 
 	qos := 1
 
@@ -32,6 +32,7 @@ func main() {
 	if token := client.Connect(); token.Wait() && token.Error() != nil {
 		panic(token.Error())
 	}
+	
 	fmt.Println("Sending Data...")
 	token := client.Publish(topic, byte(qos), false, payload)
 	token.Wait()
